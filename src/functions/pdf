@@ -1,0 +1,19 @@
+import html2pdf from "html2pdf.js";
+import { showToast } from "./toast";
+export default class PDF {
+  downloadPdf(filename, htmlString) {
+    const container = document.createElement("div");
+    container.innerHTML = htmlString;
+    const name = filename + ".pdf";
+    html2pdf().from(container).save(name);
+  }
+
+  async viewPdf(htmlString) {
+    const container = document.createElement("div");
+    container.innerHTML = htmlString;
+
+    const blob = await html2pdf().from(container).outputPdf("blob");
+    const blobUrl = URL.createObjectURL(blob);
+    return blobUrl;
+  }
+}
