@@ -35,10 +35,7 @@ npm install
 ```
 
 2. Create a `.env` file in the root with:
-```
-VITE_GEMINI_KEY=your_gemini_api_key
-VITE_YOUTUBE_API_KEY=your_youtube_data_api_key
-```
+
 
 3. Run the dev server
 ```bash
